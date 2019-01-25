@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Sign in</h1>
+<form method="post">
+  <input type="username" name="username" placeholder="Username">
+  <input type="password" name="password" placeholder="Password">
+  <input type="submit">
+</form>
+
+{% if session['loggedin'] == True %}
+<p>Welcome back, Boss!</p>
+{% endif %}
+{% endblock %}

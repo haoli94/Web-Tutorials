@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>HUST</title>
+  </head>
+  <body>
+    <p>Apple Name:
+    <a href="/">Home</a>
+    <a href="/signin">Sign in</a>
+    <a href="/signup">Sign up</a>
+    {% if session['loggedin'] %}
+    <a href="/logout">Log out</a>
+    {% endif %}
+    </p>
+    {% block content %}
+    {% endblock %}
+  </body>
+</html>

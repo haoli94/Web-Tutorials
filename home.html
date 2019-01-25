@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<p>Hello, Boss!</p>
+
+{% if session['loggedin'] %}
+<ul>
+{% for item in list %}
+  <li>{{item[1]}} [<a href={{'/delete?id=' + item[0]|string}}>X</a>]</li>
+{% endfor %}
+</ul>
+
+<form method="post">
+    <input type="text" name="new" placeholder="new entry">
+    <input type="submit" value="add">
+</form>
+{% endif %}
+{% endblock %}
